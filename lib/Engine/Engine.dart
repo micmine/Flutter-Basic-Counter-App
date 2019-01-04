@@ -1,6 +1,8 @@
-import './function/count.dart';
+import './function/Count.dart';
 import './function/Values.dart';
+
 import './component/MainView.dart';
+import './component/CounterListView.dart';
 
 class Engine {
   get(func witch) {
@@ -10,6 +12,8 @@ class Engine {
       return Values();
     } else if (witch == func.MainView) {
       return MainView();
+    } else if (witch == func.CounterView) {
+      return CounterListView();
     } else {
       return "Coud not find such a function/component";
     }
@@ -19,5 +23,6 @@ class Engine {
 enum func {
   Count,
   Values,
-  MainView
+  MainView,
+  CounterView
 }
