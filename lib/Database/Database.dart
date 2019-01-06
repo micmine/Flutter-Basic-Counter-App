@@ -10,21 +10,21 @@ class Data {
     var databasesPath = await getDatabasesPath();
     String path = join(databasesPath, filename);
 
-    Database database = await openDatabase(path, version: 1,
+    this.database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       // When creating the db, create the table
       await db.execute('CREATE TABLE count (id integer autoincremant primary key, name text, value integer, deleted intege)');
     });
 
-    this.database = database;
+
   }
 
   disconnect() async {
-    await database.close();
+    await this.database.close();
   }
 
   get() async {
-    return database;
+    return this.database;
   }
 
   insert(String query) async {
@@ -34,16 +34,16 @@ class Data {
   }
 
   update(String query) async {
-    await database.rawUpdate(query);
+    await this.database.rawUpdate(query);
   }
 
   selectList(String query) async {
-    return await database.rawQuery(query);
+    return await this.database.rawQuery(query);
   }
 
   count(String query) async {
     Sqflite.firstIntValue(
-        await database.rawQuery(query));
+        await this.database.rawQuery(query));
     assert(count == 2);
   }
 

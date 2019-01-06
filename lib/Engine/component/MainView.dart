@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../Engine.dart';
-import '../../Database/Database.dart';
+//import '../../Database/Database.dart';
 
 class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Data().test();
 
-    Data().connect();
+    //Data().connect();
 
-    //Data().insert('insert into counter (name,value) values("test,0)"');
+    //Data().insert('insert into counter (name,value) values("test",0)');
 
     return Scaffold(
       appBar: AppBar(

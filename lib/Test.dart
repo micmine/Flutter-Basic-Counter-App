@@ -1,36 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(ExpandedPage());
-
-class ExpandedPage extends StatelessWidget {
-
-  Widget _buildPage({int index, Color color}) {
-    return Container(
-      alignment: AlignmentDirectional.center,
-      color: color,
-      child: Text(
-        '$index',
-        style: TextStyle(fontSize: 132.0, color: Colors.white),
+void main() {
+  runApp(new MaterialApp(
+    home: new Scaffold(
+      body: new Center(
+        child: new RaisedButton(
+          onPressed: _incrementCounter,
+          child: new Text('Increment Counter'),
+        ),
       ),
-    );
-  }
-
-  Widget _buildPageView() {
-    return PageView(
-      children: [
-        _buildPage(index: 1, color: Colors.green),
-        _buildPage(index: 2, color: Colors.blue),
-        _buildPage(index: 3, color: Colors.indigo),
-        _buildPage(index: 4, color: Colors.red),
-      ],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "test",
-      home: _buildPageView(),
-    );
-  }
+    ),
+  ));
 }
+
+_incrementCounter() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  int counter = (prefs.getInt('counter') ?? 0) + 1;
+  print('Pressed $counter times.');
+  await prefs.setInt('counter', counter);
+}
+
