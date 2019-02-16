@@ -13,14 +13,13 @@ class _CounterListViewState extends State<CounterListView> {
     // TODO: implement build
     return PageView(
       children: <Widget>[
-        _buildCounter(0, "test", Colors.yellow),
-        _buildCounter(1, "Rächts", Colors.purple)
+        _buildCounter(0, "left", Colors.yellow),
+        _buildCounter(1, "right", Colors.purple)
       ],
     );
   }
 
   _buildCounter(int id, String name, Color color) {
-
     return CounterView(id,name,color);
   }
 }

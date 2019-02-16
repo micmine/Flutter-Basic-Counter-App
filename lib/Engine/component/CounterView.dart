@@ -79,8 +79,6 @@ class _CounterViewState extends State<CounterView> {
     print('Pressed $counter times.');
     await prefs.setInt('counter-' + id.toString(), value);
     print('|-| Pressed $counter times.');
-
-    //return counter;
   }
 
   initValue() async {

@@ -1,16 +1,19 @@
-# counter
+# Flutter Basic Counter App
+This app is compatible with every Device that's compatible with [Flutter](https://github.com/flutter/flutter).
+It has two counters as default but you can add more by your self when setting up flutter on a pc.
 
-A new Flutter project.
+## Add more counters
+Just go to the CounterListView.dart and add in line 17 a new counter with :
 
-## Getting Started
+```
+_buildCounter(2, "Another counter", Colors.yellow),
+```
 
-This project is a starting point for a Flutter application.
+Please increment the first integer so that it works.
 
-A few resources to get you started if this is your first Flutter project:
+## Why I made this
+I wanted to learn flutter to my skillset this was just a project for my self.
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Get Started
+Setup flutter development [here](https://flutter.io/docs/get-started/install)
+Then Download the code from GitHub and open it with your chosen IDE.
